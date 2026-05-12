@@ -5,3 +5,15 @@ edition = "2024"
 
 [build-dependencies]
 cc = "1"
+
+[[bin]]
+name = "cargo-cpp-project"
+path = "dummy.rs"
+test = false
+bench = false
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
