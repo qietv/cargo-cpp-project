@@ -1,13 +1,12 @@
 // Dummy Rust file to satisfy Cargo's requirement for a Rust source file.
 
-// We use C/C++'s main function.
+// Use the C/C++ main function instead of a Rust-generated entry point.
 #![no_main]
 
-// We use C/C++'s standard library.
+// Do not link Rust's standard library.
 #![no_std]
 
-// Panic handler for no_std environment to make cargo happy.
-// Will be never called since we don't have any Rust code.
+// Required by no_std; no Rust application code should reach this handler.
 #[panic_handler]
 fn panic(_info: &core::panic::PanicInfo) -> ! {
     loop {}
